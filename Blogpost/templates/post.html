@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post</title>
+    <link rel="stylesheet" href="../static//css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="title"><h1>My blog</h1></div>
+        </div>
+        {% for blog in allblog:%}
+            {% if blog["id"]==index:%}
+        <div class="content">
+            <div class="card">
+                <h1>{{blog.title}}</h1>
+                <h2>{{blog.subtitle}}</h2>
+                <p>{{blog.body}}</p>
+                <a href="{{url_for('blogs')}}">Home</a>
+
+            </div>
+        </div>
+            {%endif%}
+        {%endfor%}
+    </div>
+    
+</body>
+</html>

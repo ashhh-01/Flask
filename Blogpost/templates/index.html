@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="title"><h1>My Blog</h1></div>
+        </div>
+        {% for post in posts:%}
+        <div class="content">
+            <div class="card">
+                <h2>{{post.title}}</h2>
+                <p>{{post.subtitle}}</p>
+                <a href="{{url_for('show_post',index=post.id)}}">Read</a>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+    <div class="footer">
+        <p>copyright {{year}}.Built by Ash</p>
+    </div>
+    
+</body>
+</html>
+
